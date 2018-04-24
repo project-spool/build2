@@ -1,10 +1,9 @@
-import pandas as pd
-import numpy as np
 import pickle
 import random
+import pandas as pd
+import numpy as np
 from scipy.sparse import csr_matrix, csc_matrix
 from sklearn.cluster import AgglomerativeClustering, KMeans, MeanShift
-
 
 # MARK: Pandas pre-processing functions
 def filter_incompletes(df):
@@ -64,7 +63,7 @@ if __name__ == '__main__':
     # american_users_df.to_pickle('../data/pickles/american-users-pickle.pkl')
 
     american_users_df = pd.read_pickle('../data/pickles/american-users-pickle.pkl')
-    random_americans = sample(1500, american_users_df)
+    random_americans = sample(10000, american_users_df)
 
     # Previously used to create the data frames
     # RANDOM_USERS = '../data/random-users/1000-random-users.tsv'
@@ -123,6 +122,7 @@ if __name__ == '__main__':
 
     for idx, artist in enumerate(artist_id_dict.keys()):
         artist_index_dict[artist] = idx
+        artist_index_dict[idx] = artist
 
     # column names for the pandas artist data frame
     cols = ['artist_id', 'artist_name', 'play_count']
@@ -200,7 +200,7 @@ if __name__ == '__main__':
             # now it's time to add the new stuff to the data arrays
             row_indices = np.append(row_indices, current_row)
             col_indices = np.append(col_indices, current_col)
-            user_artist_data = np.append(user_artist_data, 1/current_data)
+            user_artist_data = np.append(user_artist_data, current_data)
 
             tup = (artist_id, artist_id_dict[artist_id])
             tuples.append(tup)
@@ -219,13 +219,25 @@ if __name__ == '__main__':
     print(dense_mtx)
 
     # Finally, cluster the data
-    km = KMeans(n_clusters=10)
+    km = KMeans(n_clusters=15)
     km = km.fit(dense_mtx)
     clusters = km.labels_.tolist()
+    centroids = km.cluster_centers_
+    centroid_dict = {}
 
-    print("clusters length: ", len(clusters))
-    print("found users length: ", len(found_users))
-    print(clusters)
+    for i in range(len(centroids)):
+
+        curr_centroid = centroids[i]
+        print(curr_centroid)
+        artist_idxs = np.nonzero(curr_centroid > 0)[0]
+        artists = [ artist_id_dict[artist_index_dict[idx]] for idx in artist_idxs]
+        centroid_dict[i] = artists
+
+    for centroid in centroid_dict.keys():
+        print(centroid)
+        print(len(centroid_dict[centroid]))
+        print(centroid_dict[centroid])
+        print('\n')
 
     all_tuples = []
 
@@ -237,11 +249,15 @@ if __name__ == '__main__':
     user_cluster_df = pd.DataFrame(all_tuples)
     user_cluster_df.columns = ['cluster', 'user_id', 'top_artists']
 
+    print("cluster value counts: ")
+    print(user_cluster_df.cluster.value_counts())
+
     cluster_groups = user_cluster_df.groupby('cluster')
+    pd.to_pickle(cluster_groups, '../data/pickles/sample-clustered-data.pkl')
 
     for name, group in cluster_groups:
+
+        print(group)
         print(name)
         print(group)
         print('\n')
-
-
