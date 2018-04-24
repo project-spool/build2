@@ -6,13 +6,13 @@ from pymining import itemmining
 import math
 
 
-def find_frequent_artists(proportion_of_users, sample_clusters):
+def find_frequent_artists(sample_clusters):
 
     """
      Finds frequent artists from a sample cluster object of users, cluster labels, and artist data
     """
 
-    print("Finding frequent itemsets")
+    print("Finding frequent item sets")
 
     # sample cluster data on 5000 random american users, k = 10 for k means, and top 5 artists
     frequent_artist_dict = {}
@@ -20,6 +20,7 @@ def find_frequent_artists(proportion_of_users, sample_clusters):
     # iterates over the sample clusters which contains:
     # cluster number (0, 1, 2, ... , n)
     # group data: [ user id, top artists ] where top artists = [ (artist name, artist id) ... ]
+
     for cluster, user_data in sample_clusters:
 
         print("\nCLUSTER NUMBER {}".format(cluster))
@@ -28,7 +29,8 @@ def find_frequent_artists(proportion_of_users, sample_clusters):
 
         # calculates the minimum support of artists according to some proportion of users
         # ex: pass in 10, so min support is num users / 10, or 10% of users
-        min_sup = math.floor(num_users/proportion_of_users)
+        # for some reason we can't import this number as a parameter...?
+        min_sup = math.floor(num_users/10)
 
         # this is for humongous clusters where a large minimum support ( > 300 ) doesn't really make sense
         # for the Last.fm data set

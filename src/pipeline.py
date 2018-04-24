@@ -32,18 +32,28 @@ def run_frequent_items_pipeline(path):
 
     # read the data from a pickle
     clustered_groups = pd.read_pickle(path)
-    frequent_artist_dict = find_frequent_artists(proportion_of_users=15, sample_clusters=clustered_groups)
+    frequent_artist_dict = find_frequent_artists(sample_clusters=clustered_groups)
 
     return frequent_artist_dict
+
+
+def data2json(frequent_artists):
+    print("Converting data to JSON for visualization")
+    return {}
+
 
 if __name__ == '__main__':
 
     # Run the pipeline
     # Creates a pickle
-    run_clustering_pipeline(sample_size=500, top_artist_count=5, num_clusters=5)
+    # run_clustering_pipeline(sample_size=5000, top_artist_count=5, num_clusters=10)
 
     # creates the frequent items
     # Reads the previous pickle
-    frequent_artists = run_frequent_items_pipeline(path='../data/pickles/clustered-users-500-americans.pkl')
+    frequent_artists = run_frequent_items_pipeline(path='../data/pickles/clustered-users-5000-americans.pkl')
 
     print(frequent_artists)
+
+    for cluster in frequent_artists.keys():
+        print("\nCluster: ", cluster)
+        print(frequent_artists[cluster])

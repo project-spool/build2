@@ -3,7 +3,7 @@
 # takes a user x artist matrix and performs k-means clustering
 
 import pandas as pd
-from sklearn.cluster import MiniBatchKMeans
+from sklearn.cluster import MiniBatchKMeans, KMeans
 
 
 def cluster(found_users, matrix, num_clusters):
@@ -15,6 +15,7 @@ def cluster(found_users, matrix, num_clusters):
     print("Clustering with Mini Batch K Means")
 
     # grab the clustering object and fit it to the input USER x ARTIST matrix
+    # km = KMeans(n_clusters=num_clusters)
     km = MiniBatchKMeans(n_clusters=num_clusters)
     km = km.fit(matrix)
 
