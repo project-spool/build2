@@ -13,13 +13,10 @@ def find_frequent_artists(sample_clusters):
     """
 
     print("Finding frequent item sets")
+    print(sample_clusters)
 
     # sample cluster data on 5000 random american users, k = 10 for k means, and top 5 artists
     frequent_artist_dict = {}
-
-    # iterates over the sample clusters which contains:
-    # cluster number (0, 1, 2, ... , n)
-    # group data: [ user id, top artists ] where top artists = [ (artist name, artist id) ... ]
 
     for cluster, user_data in sample_clusters:
 
@@ -31,6 +28,9 @@ def find_frequent_artists(sample_clusters):
         # ex: pass in 10, so min support is num users / 10, or 10% of users
         # for some reason we can't import this number as a parameter...?
         min_sup = math.floor(num_users/10)
+
+        if min_sup == 0:
+            min_sup = 1
 
         # this is for humongous clusters where a large minimum support ( > 300 ) doesn't really make sense
         # for the Last.fm data set

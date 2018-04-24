@@ -4,22 +4,65 @@
 
 import pandas as pd
 from sklearn.cluster import MiniBatchKMeans, KMeans
+from sklearn import metrics
+from scipy.spatial.distance import cdist
+import numpy as np
+import matplotlib.pyplot as plt
 
 
-def cluster(found_users, matrix, num_clusters):
+def calc_sses(matrix, start, stop):
+    """
+     Calculates the SSEs for an input matrix between start and stop k values
+    """
+
+    # for each key k:
+        # k: (silhouette score, labels)
+    sse = {}
+
+    for k in range(start, stop+1):
+
+        print("\nRunning on k = {}".format(k))
+
+        km = MiniBatchKMeans(n_clusters=k)
+        km = km.fit(matrix)
+
+        print("Labels: {}".format(km.labels_))
+        print("Inertia: {}".format(km.inertia_))
+
+        sse[k] = (km.inertia_, km.labels_.tolist())
+
+    return sse
+
+
+def optimize(sse):
 
     """
-     Clusters a given matrix with MiniBatchKMeans
-     Returns the grouped clusters for frequent itemset mining
+     Takes in a dictionary of all SSEs for given k's and returns a tuple of the min SSE and their cluster labels
     """
-    print("Clustering with Mini Batch K Means")
+    kv_pairs = zip(sse.keys(), sse.values())
+    min_result = min(kv_pairs, key=lambda pair: pair[1])
 
-    # grab the clustering object and fit it to the input USER x ARTIST matrix
-    # km = KMeans(n_clusters=num_clusters)
-    km = MiniBatchKMeans(n_clusters=num_clusters)
-    km = km.fit(matrix)
+    result_dict = {
+        "k": min_result[0],
+        "sse": min_result[1][0],
+        "labels": min_result[1][1]
+    }
 
-    cluster_labels = km.labels_.tolist()
+    return result_dict
+
+
+def plot_sse(sse):
+
+    plt.figure()
+    plt.interactive(False)
+    plt.plot(list(sse.keys()), [val[0] for val in sse.values()])
+    plt.xlabel("Number of cluster")
+    plt.ylabel("SSE")
+    plt.title("K-Means SSE for 20,000 Last.fm users")
+    plt.show()
+
+
+def create_cluster_groups(found_users, cluster_labels):
 
     # stores all of the user-cluster label data to be passed into a new pandas data frame
     all_tuples = []

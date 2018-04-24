@@ -3,26 +3,28 @@
 # hosts all processing and clustering processes
 
 from process import process
-from cluster import cluster
+from cluster import optimize, calc_sses, plot_sse, create_cluster_groups
 from frequent_items import find_frequent_artists
 import pandas as pd
 
 
-def run_clustering_pipeline(sample_size, top_artist_count, num_clusters):
-
+def run_processing_pipliline(sample_size, top_artist_count):
     """
-     Runs MiniBatch K means given a sample size and top artist count
+     Runs the pre processing algorithms to produce the user artist matrix
     """
-
-    # Grab the found user dictionary and user artist matrix from the pre processing function
-    # takes a sample of 10,000 random americans and takes each of their top 5 artists
     found_users, user_artist_mtx = process(sample_size=sample_size, top_artist_count=top_artist_count)
+    return found_users, user_artist_mtx
 
-    # Pass both into the cluster function
-    cluster_groups = cluster(found_users=found_users, matrix=user_artist_mtx, num_clusters=num_clusters)
 
-    pd.to_pickle(cluster_groups, '../data/pickles/clustered-users-{}-americans.pkl'.format(sample_size))
-
+# def run_clustering_pipeline(found_users, user_artist_mtx):
+#
+#     """
+#      Runs MiniBatch K means given a sample size and top artist count
+#     """
+#     # Pass both into the cluster function
+#     cluster_groups = cluster(found_users=found_users, matrix=user_artist_mtx, num_clusters=num_clusters)
+#     pd.to_pickle(cluster_groups, '../data/pickles/clustered-users-{}-americans.pkl'.format(sample_size))
+#
 
 def run_frequent_items_pipeline(path):
 
@@ -45,15 +47,29 @@ def data2json(frequent_artists):
 if __name__ == '__main__':
 
     # Run the pipeline
-    # Creates a pickle
-    # run_clustering_pipeline(sample_size=5000, top_artist_count=5, num_clusters=10)
 
-    # creates the frequent items
-    # Reads the previous pickle
-    frequent_artists = run_frequent_items_pipeline(path='../data/pickles/clustered-users-5000-americans.pkl')
+    # print("Reading user pickle")
+    # found_users = pd.read_pickle('../data/pickles/20k/found-users.pkl')
+    #
+    # print("Reading user artist matrix pickle")
+    # user_artist_mtx = pd.read_pickle('../data/pickles/20k/user-artist-mtx.pkl')
+
+    # run_clustering_pipeline(found_users, user_artist_mtx)
+    # sse = calc_sses(user_artist_mtx, 5, 20)
+    # pd.to_pickle(sse, '../data/pickles/20k/sse-5-20-dict')
+
+    # print("Reading sse pickle")
+    # sse = pd.read_pickle('../data/pickles/20k/sse-5-20-dict')
+
+    # plot_sse(sse)
+    # optimal_cluster = optimize(sse)
+    # clusters = create_cluster_groups(found_users, optimal_cluster['labels'])
+    # pd.to_pickle(clusters, '../data/pickles/clustered-users-20000-americans.pkl')
+
+    frequent_artists = run_frequent_items_pipeline(path='../data/pickles/clustered-users-20000-americans.pkl')
 
     print(frequent_artists)
-
-    for cluster in frequent_artists.keys():
-        print("\nCluster: ", cluster)
-        print(frequent_artists[cluster])
+    #
+    # for cluster in frequent_artists.keys():
+    #     print("\nCluster: ", cluster)
+    #     print(frequent_artists[cluster])
