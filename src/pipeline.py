@@ -6,6 +6,7 @@ from process import process
 from cluster import optimize, calc_sses, plot_sse, create_cluster_groups
 from frequent_items import find_frequent_artists
 import pandas as pd
+import json
 
 
 def run_processing_pipliline(sample_size, top_artist_count):
@@ -41,8 +42,47 @@ def run_frequent_items_pipeline(path):
 
 def data2json(frequent_artists):
     print("Converting data to JSON for visualization")
-    return {}
 
+    for k in frequent_artists:
+        print(k)
+        print(frequent_artists[k])
+        print('\n')
+
+    # Initial setup
+    viz_dict = {}
+    viz_dict["name"] = '20k Last.fm Users'
+    viz_dict["children"] = []
+
+    # Go through each of the children
+    for k in frequent_artists:
+
+        current_cluster = {}
+        artists = frequent_artists[k]
+
+        children = []
+
+        for artist in artists:
+            artist_obj = {}
+            artist_obj["name"] = artist[0]
+            artist_obj["size"] = artist[1]
+            children.append(artist_obj)
+
+        # gets the name of the top artist
+        name = artists[0][0]
+        name = k
+
+        current_cluster["name"] = name
+        current_cluster["children"] = children
+
+        viz_dict["children"].append(current_cluster)
+
+    return viz_dict
+
+
+def export_json(dict):
+    with open('20k-data.json', 'w') as f:
+        json.dump(dict, f, ensure_ascii=False, indent=4, separators=(',', ': '))
+        f.write('\n')
 
 if __name__ == '__main__':
 
@@ -67,9 +107,5 @@ if __name__ == '__main__':
     # pd.to_pickle(clusters, '../data/pickles/clustered-users-20000-americans.pkl')
 
     frequent_artists = run_frequent_items_pipeline(path='../data/pickles/clustered-users-20000-americans.pkl')
-
-    print(frequent_artists)
-    #
-    # for cluster in frequent_artists.keys():
-    #     print("\nCluster: ", cluster)
-    #     print(frequent_artists[cluster])
+    viz = data2json(frequent_artists)
+    export_json(viz)
