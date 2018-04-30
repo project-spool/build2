@@ -1,0 +1,734 @@
+{
+    "name": "20k Last.fm Users",
+    "children": [
+        {
+            "name": "death cab for cutie",
+            "children": [
+                {
+                    "name": "death cab for cutie",
+                    "size": 467
+                },
+                {
+                    "name": "kanye west",
+                    "size": 331
+                },
+                {
+                    "name": "coldplay",
+                    "size": 328
+                },
+                {
+                    "name": "modest mouse",
+                    "size": 323
+                },
+                {
+                    "name": "sufjan stevens",
+                    "size": 306
+                },
+                {
+                    "name": "the beatles",
+                    "size": 275
+                },
+                {
+                    "name": "fall out boy",
+                    "size": 266
+                },
+                {
+                    "name": "bright eyes",
+                    "size": 247
+                },
+                {
+                    "name": "elliott smith",
+                    "size": 238
+                },
+                {
+                    "name": "lil' wayne",
+                    "size": 238
+                },
+                {
+                    "name": "linkin park",
+                    "size": 219
+                },
+                {
+                    "name": "jack johnson",
+                    "size": 217
+                },
+                {
+                    "name": "brand new",
+                    "size": 215
+                },
+                {
+                    "name": "bob dylan",
+                    "size": 206
+                },
+                {
+                    "name": "blink-182",
+                    "size": 205
+                },
+                {
+                    "name": "animal collective",
+                    "size": 193
+                },
+                {
+                    "name": "muse",
+                    "size": 193
+                },
+                {
+                    "name": "britney spears",
+                    "size": 192
+                },
+                {
+                    "name": "pink floyd",
+                    "size": 190
+                },
+                {
+                    "name": "red hot chili peppers",
+                    "size": 190
+                },
+                {
+                    "name": "iron & wine",
+                    "size": 189
+                },
+                {
+                    "name": "daft punk",
+                    "size": 183
+                },
+                {
+                    "name": "metallica",
+                    "size": 173
+                },
+                {
+                    "name": "tom waits",
+                    "size": 170
+                },
+                {
+                    "name": "the mountain goats",
+                    "size": 168
+                },
+                {
+                    "name": "belle and sebastian",
+                    "size": 166
+                },
+                {
+                    "name": "of montreal",
+                    "size": 165
+                },
+                {
+                    "name": "tegan and sara",
+                    "size": 163
+                },
+                {
+                    "name": "andrew bird",
+                    "size": 162
+                },
+                {
+                    "name": "paramore",
+                    "size": 162
+                },
+                {
+                    "name": "sigur rós",
+                    "size": 162
+                },
+                {
+                    "name": "the killers",
+                    "size": 160
+                },
+                {
+                    "name": "led zeppelin",
+                    "size": 155
+                },
+                {
+                    "name": "john mayer",
+                    "size": 151
+                },
+                {
+                    "name": "the decemberists",
+                    "size": 151
+                },
+                {
+                    "name": "the smiths",
+                    "size": 150
+                },
+                {
+                    "name": "boards of canada",
+                    "size": 149
+                },
+                {
+                    "name": "the cure",
+                    "size": 148
+                },
+                {
+                    "name": "jay-z",
+                    "size": 148
+                },
+                {
+                    "name": "regina spektor",
+                    "size": 145
+                },
+                {
+                    "name": "the shins",
+                    "size": 143
+                },
+                {
+                    "name": "depeche mode",
+                    "size": 142
+                },
+                {
+                    "name": "madonna",
+                    "size": 140
+                },
+                {
+                    "name": "beck",
+                    "size": 137
+                },
+                {
+                    "name": "broken social scene",
+                    "size": 137
+                },
+                {
+                    "name": "johnny cash",
+                    "size": 137
+                },
+                {
+                    "name": "girl talk",
+                    "size": 135
+                },
+                {
+                    "name": "u2",
+                    "size": 133
+                },
+                {
+                    "name": "sublime",
+                    "size": 131
+                },
+                {
+                    "name": "green day",
+                    "size": 129
+                },
+                {
+                    "name": "the magnetic fields",
+                    "size": 129
+                },
+                {
+                    "name": "panic! at the disco",
+                    "size": 128
+                },
+                {
+                    "name": "arcade fire",
+                    "size": 127
+                },
+                {
+                    "name": "jason mraz",
+                    "size": 127
+                },
+                {
+                    "name": "the smashing pumpkins",
+                    "size": 127
+                },
+                {
+                    "name": "incubus",
+                    "size": 127
+                },
+                {
+                    "name": "rilo kiley",
+                    "size": 126
+                },
+                {
+                    "name": "feist",
+                    "size": 126
+                },
+                {
+                    "name": "explosions in the sky",
+                    "size": 124
+                },
+                {
+                    "name": "the white stripes",
+                    "size": 121
+                },
+                {
+                    "name": "david bowie",
+                    "size": 120
+                },
+                {
+                    "name": "dave matthews band",
+                    "size": 119
+                },
+                {
+                    "name": "björk",
+                    "size": 119
+                },
+                {
+                    "name": "eminem",
+                    "size": 119
+                },
+                {
+                    "name": "atmosphere",
+                    "size": 119
+                },
+                {
+                    "name": "minus the bear",
+                    "size": 118
+                },
+                {
+                    "name": "stars",
+                    "size": 115
+                },
+                {
+                    "name": "jimmy eat world",
+                    "size": 115
+                },
+                {
+                    "name": "anberlin",
+                    "size": 113
+                },
+                {
+                    "name": "say anything",
+                    "size": 112
+                },
+                {
+                    "name": "nas",
+                    "size": 111
+                },
+                {
+                    "name": "cat power",
+                    "size": 109
+                },
+                {
+                    "name": "beirut",
+                    "size": 109
+                },
+                {
+                    "name": "the clash",
+                    "size": 108
+                },
+                {
+                    "name": "coheed and cambria",
+                    "size": 108
+                },
+                {
+                    "name": "pixies",
+                    "size": 108
+                },
+                {
+                    "name": "nine inch nails",
+                    "size": 108
+                },
+                {
+                    "name": "the rolling stones",
+                    "size": 107
+                },
+                {
+                    "name": "they might be giants",
+                    "size": 106
+                },
+                {
+                    "name": "new found glory",
+                    "size": 105
+                },
+                {
+                    "name": "kings of leon",
+                    "size": 105
+                },
+                {
+                    "name": "spoon",
+                    "size": 105
+                },
+                {
+                    "name": "tool",
+                    "size": 104
+                },
+                {
+                    "name": "ratatat",
+                    "size": 104
+                },
+                {
+                    "name": "bad religion",
+                    "size": 103
+                },
+                {
+                    "name": "misfits",
+                    "size": 103
+                },
+                {
+                    "name": "ben folds",
+                    "size": 102
+                },
+                {
+                    "name": "foo fighters",
+                    "size": 102
+                },
+                {
+                    "name": "system of a down",
+                    "size": 102
+                },
+                {
+                    "name": "radiohead",
+                    "size": 101
+                },
+                {
+                    "name": "saves the day",
+                    "size": 100
+                },
+                {
+                    "name": "lupe fiasco",
+                    "size": 100
+                },
+                {
+                    "name": "aphex twin",
+                    "size": 100
+                },
+                {
+                    "name": "afi",
+                    "size": 99
+                },
+                {
+                    "name": "iron maiden",
+                    "size": 99
+                },
+                {
+                    "name": "copeland",
+                    "size": 98
+                },
+                {
+                    "name": "dashboard confessional",
+                    "size": 98
+                },
+                {
+                    "name": "bloc party",
+                    "size": 98
+                },
+                {
+                    "name": "ryan adams",
+                    "size": 97
+                },
+                {
+                    "name": "t.i.",
+                    "size": 97
+                },
+                {
+                    "name": "motion city soundtrack",
+                    "size": 96
+                },
+                {
+                    "name": "sonic youth",
+                    "size": 96
+                },
+                {
+                    "name": "evanescence",
+                    "size": 96
+                },
+                {
+                    "name": "relient k",
+                    "size": 95
+                },
+                {
+                    "name": "against me!",
+                    "size": 95
+                },
+                {
+                    "name": "my chemical romance",
+                    "size": 95
+                },
+                {
+                    "name": "pavement",
+                    "size": 94
+                },
+                {
+                    "name": "beastie boys",
+                    "size": 94
+                },
+                {
+                    "name": "rise against",
+                    "size": 93
+                },
+                {
+                    "name": "devendra banhart",
+                    "size": 91
+                },
+                {
+                    "name": "tori amos",
+                    "size": 90
+                },
+                {
+                    "name": "gorillaz",
+                    "size": 90
+                },
+                {
+                    "name": "nightwish",
+                    "size": 89
+                },
+                {
+                    "name": "thrice",
+                    "size": 88
+                },
+                {
+                    "name": "mindless self indulgence",
+                    "size": 88
+                },
+                {
+                    "name": "the national",
+                    "size": 88
+                },
+                {
+                    "name": "r.e.m.",
+                    "size": 88
+                },
+                {
+                    "name": "lady gaga",
+                    "size": 87
+                },
+                {
+                    "name": "interpol",
+                    "size": 87
+                },
+                {
+                    "name": "wilco",
+                    "size": 86
+                },
+                {
+                    "name": "opeth",
+                    "size": 86
+                },
+                {
+                    "name": "beyoncé",
+                    "size": 85
+                },
+                {
+                    "name": "jack's mannequin",
+                    "size": 85
+                },
+                {
+                    "name": "snow patrol",
+                    "size": 85
+                },
+                {
+                    "name": "aesop rock",
+                    "size": 85
+                },
+                {
+                    "name": "air",
+                    "size": 84
+                },
+                {
+                    "name": "taking back sunday",
+                    "size": 83
+                },
+                {
+                    "name": "nirvana",
+                    "size": 83
+                },
+                {
+                    "name": "nofx",
+                    "size": 82
+                },
+                {
+                    "name": "megadeth",
+                    "size": 81
+                },
+                {
+                    "name": "underoath",
+                    "size": 80
+                },
+                {
+                    "name": "guided by voices",
+                    "size": 79
+                },
+                {
+                    "name": "circa survive",
+                    "size": 79
+                },
+                {
+                    "name": "thievery corporation",
+                    "size": 79
+                },
+                {
+                    "name": "in flames",
+                    "size": 78
+                },
+                {
+                    "name": "joy division",
+                    "size": 77
+                },
+                {
+                    "name": "j dilla",
+                    "size": 77
+                },
+                {
+                    "name": "the roots",
+                    "size": 76
+                },
+                {
+                    "name": "cake",
+                    "size": 76
+                },
+                {
+                    "name": "weezer",
+                    "size": 75
+                },
+                {
+                    "name": "barenaked ladies",
+                    "size": 75
+                },
+                {
+                    "name": "amy winehouse",
+                    "size": 75
+                }
+            ]
+        },
+        {
+            "name": "the beatles",
+            "children": [
+                {
+                    "name": "the beatles",
+                    "size": 1115
+                },
+                {
+                    "name": "bob dylan",
+                    "size": 175
+                },
+                {
+                    "name": "radiohead",
+                    "size": 139
+                },
+                {
+                    "name": "pink floyd",
+                    "size": 113
+                },
+                {
+                    "name": "elliott smith",
+                    "size": 99
+                },
+                {
+                    "name": "the rolling stones",
+                    "size": 96
+                },
+                {
+                    "name": "led zeppelin",
+                    "size": 93
+                },
+                {
+                    "name": "modest mouse",
+                    "size": 87
+                },
+                {
+                    "name": "sufjan stevens",
+                    "size": 85
+                },
+                {
+                    "name": "death cab for cutie",
+                    "size": 82
+                },
+                {
+                    "name": "david bowie",
+                    "size": 79
+                },
+                {
+                    "name": "of montreal",
+                    "size": 79
+                }
+            ]
+        },
+        {
+            "name": "alkaline trio",
+            "children": [
+                {
+                    "name": "alkaline trio",
+                    "size": 121
+                },
+                {
+                    "name": "brand new",
+                    "size": 27
+                },
+                {
+                    "name": "saves the day",
+                    "size": 26
+                },
+                {
+                    "name": "against me!",
+                    "size": 23
+                },
+                {
+                    "name": "the lawrence arms",
+                    "size": 19
+                },
+                {
+                    "name": "blink-182",
+                    "size": 18
+                },
+                {
+                    "name": "death cab for cutie",
+                    "size": 14
+                },
+                {
+                    "name": "hot water music",
+                    "size": 14
+                },
+                {
+                    "name": "dashboard confessional",
+                    "size": 13
+                },
+                {
+                    "name": "bad religion",
+                    "size": 12
+                },
+                {
+                    "name": "bright eyes",
+                    "size": 12
+                }
+            ]
+        },
+        {
+            "name": "radiohead",
+            "children": [
+                {
+                    "name": "radiohead",
+                    "size": 921
+                },
+                {
+                    "name": "the beatles",
+                    "size": 185
+                },
+                {
+                    "name": "death cab for cutie",
+                    "size": 125
+                },
+                {
+                    "name": "sufjan stevens",
+                    "size": 116
+                },
+                {
+                    "name": "modest mouse",
+                    "size": 114
+                },
+                {
+                    "name": "elliott smith",
+                    "size": 98
+                },
+                {
+                    "name": "coldplay",
+                    "size": 97
+                }
+            ]
+        },
+        {
+            "name": "nine inch nails",
+            "children": [
+                {
+                    "name": "nine inch nails",
+                    "size": 282
+                },
+                {
+                    "name": "radiohead",
+                    "size": 44
+                },
+                {
+                    "name": "tool",
+                    "size": 38
+                },
+                {
+                    "name": "marilyn manson",
+                    "size": 34
+                }
+            ]
+        }
+    ]
+}

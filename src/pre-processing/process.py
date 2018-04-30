@@ -2,7 +2,8 @@
 # author: Tyler Angert
 # pre-processes and cleans input data to get ready for clustering
 
-import pickle
+import math
+from collections import Counter
 import random
 import pandas as pd
 import numpy as np
@@ -50,19 +51,22 @@ def create_random_user_tsv(num, users):
     random_users_df.to_csv('../../data/random_users.tsv', sep='\t', index=False)
 
 
+def tf_idf_dict():
+    return 0
+
 # FIXME: Not complete
-def tf_idf(term, parent_document, all_documents):
+def tf_idf(artist, parent_document, all_documents):
 
     """
      Calculates the tf-idf score for each artist
     """
 
-    # TF(t) = (Number of times term t appears in a document) / (Total number of terms in the document).
+    # TF(artist) = (Number of times user plays an artist) / (Total number of plays for user).
     tf = 5
 
-    # IDF(t) = log_e(Total number of documents / Number of documents with term t in it).
-    # create a dictionary that maps a term to how many users have it
-    idf = 5
+    # IDF(artist) = log_e(Total number of users / Number of users who play an artist).
+
+    idf = math.log(5, math.e)
 
     return tf * idf
 
@@ -86,18 +90,20 @@ def grab_all_user_profiles(path):
     return filter_incompletes(user_profs_df)
 
 
-def create_artist_id_dict(user_ids, user_id_groups, top_artist_count):
+def get_artist_metadata(user_ids, user_id_groups, top_artist_count):
 
     """
      Maps artist ids to artist names
     """
-
+    #maps artist id's to names
     artist_id_dict = {}
+
+    # stores artist ID's and how many users have them
+    artist_user_counter = Counter()
 
     print("Creating artist-id dictionary")
 
     for uid in user_ids:
-
         try:
             group = user_id_groups.get_group(uid)
         except KeyError as err:
@@ -108,11 +114,13 @@ def create_artist_id_dict(user_ids, user_id_groups, top_artist_count):
         artist_names = list(top_data['artist_name'])
         zipped = zip(artist_ids, artist_names)
 
+        for id in artist_ids:
+            artist_user_counter.update([id])
+
         for k, v in zipped:
             artist_id_dict[k] = v
 
-    print("Done with artist-id dictionary")
-    return artist_id_dict
+    return artist_user_counter, artist_id_dict
 
 
 # MARK: Main process function that returns the appropriate USER x ARTIST matrix (explained inside)
@@ -208,13 +216,10 @@ def process(sample_size, top_artist_count):
     """
 
     # Used to reference back IDs and artist names
-    artist_id_dict = create_artist_id_dict(user_ids, user_id_groups, TOP_ARTIST_COUNT)
+    artist_user_counter, artist_id_dict = get_artist_metadata(user_ids, user_id_groups, TOP_ARTIST_COUNT)
 
     # Used to reference artist IDs to their spots in the user x artist matrix
     artist_index_dict = {}
-
-    # FIXME: create another dictionary for the users
-    user_index_dict = {}
 
     # Stores artists and their indices in the user artist matrix
     # acts as a two-way dictionary
@@ -289,7 +294,18 @@ def process(sample_size, top_artist_count):
     for each user-artist combo into the sparse matrix
     ###############################################################
     """
+    # stores the IDF values for each
+    IDF_dict = {}
 
+    # IDF(artist) = log_e(Total number of users / Number of users who play an artist).
+    NUM_USERS = len(user_ids)
+
+    """
+     need to iterate through artists
+     for each artist:
+        count how many users have that artist
+
+    """
     # iterate through each of the relevant users
     # increment "current_row" on each now uid loop in order to keep track of the coordinates
     for uid in user_ids:
@@ -332,12 +348,22 @@ def process(sample_size, top_artist_count):
             current_col = artist_index
 
             # the current "term frequency"
-            current_data = (play_count / total_plays)
+            # this is the TF term
+            tf = (play_count/total_plays)
+
+            # get the total number of plays
+            total_user_plays = artist_user_counter[artist_id]
+            idf = math.log(NUM_USERS/total_user_plays)
+
+            # this discounts globally popular artists from being in every cluster
+            # like the beatles and radiohead
+            # currently makes the clusters worse for some reason...
+            current_data = (tf * idf)
 
             # now it's time to add the new data to the data arrays
             row_indices = np.append(row_indices, current_row)
             col_indices = np.append(col_indices, current_col)
-            user_artist_data = np.append(user_artist_data, current_data)
+            user_artist_data = np.append(user_artist_data, tf)
 
             # store all of the relevant data into a tuple
             tup = (artist_id, artist_id_dict[artist_id])
@@ -358,6 +384,8 @@ def process(sample_size, top_artist_count):
 
     # create the row-centric matrix
     user_artist_mtx = csr_matrix((user_artist_data, (row_indices, col_indices)))
+
+    #
 
     # return the found users dictionary and dense user artist matrix to pass into clustering
     return found_users, user_artist_mtx.toarray()

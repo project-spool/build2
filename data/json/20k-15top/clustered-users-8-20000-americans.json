@@ -1,0 +1,148 @@
+{
+    "name": "20k Last.fm Users",
+    "children": [
+        {
+            "name": "fall out boy",
+            "children": [
+                {
+                    "name": "fall out boy",
+                    "size": 491
+                },
+                {
+                    "name": "paramore",
+                    "size": 285
+                },
+                {
+                    "name": "panic at the disco",
+                    "size": 222
+                }
+            ]
+        },
+        {
+            "name": "radiohead",
+            "children": [
+                {
+                    "name": "radiohead",
+                    "size": 1772
+                },
+                {
+                    "name": "the beatles",
+                    "size": 1476
+                },
+                {
+                    "name": "modest mouse",
+                    "size": 548
+                }
+            ]
+        },
+        {
+            "name": "elliott smith",
+            "children": [
+                {
+                    "name": "elliott smith",
+                    "size": 330
+                },
+                {
+                    "name": "radiohead",
+                    "size": 89
+                },
+                {
+                    "name": "the beatles",
+                    "size": 84
+                }
+            ]
+        },
+        {
+            "name": "the beatles",
+            "children": [
+                {
+                    "name": "the beatles",
+                    "size": 847
+                },
+                {
+                    "name": "bob dylan",
+                    "size": 199
+                }
+            ]
+        },
+        {
+            "name": "death cab for cutie",
+            "children": [
+                {
+                    "name": "death cab for cutie",
+                    "size": 1365
+                },
+                {
+                    "name": "sufjan stevens",
+                    "size": 474
+                },
+                {
+                    "name": "bright eyes",
+                    "size": 399
+                },
+                {
+                    "name": "coldplay",
+                    "size": 392
+                }
+            ]
+        },
+        {
+            "name": "lil' wayne",
+            "children": [
+                {
+                    "name": "lil' wayne",
+                    "size": 226
+                },
+                {
+                    "name": "kanye west",
+                    "size": 116
+                },
+                {
+                    "name": "t.i.",
+                    "size": 83
+                },
+                {
+                    "name": "jay-z",
+                    "size": 71
+                }
+            ]
+        },
+        {
+            "name": "led zeppelin",
+            "children": [
+                {
+                    "name": "led zeppelin",
+                    "size": 29
+                },
+                {
+                    "name": "the beatles",
+                    "size": 15
+                },
+                {
+                    "name": "pink floyd",
+                    "size": 13
+                },
+                {
+                    "name": "metallica",
+                    "size": 11
+                },
+                {
+                    "name": "ac/dc",
+                    "size": 7
+                },
+                {
+                    "name": "pearl jam",
+                    "size": 6
+                },
+                {
+                    "name": "the rolling stones",
+                    "size": 6
+                }
+            ]
+        },
+        {
+            "name": "",
+            "children": []
+        }
+    ]
+}

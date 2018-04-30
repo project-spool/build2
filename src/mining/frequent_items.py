@@ -27,18 +27,18 @@ def find_frequent_artists(sample_clusters):
         # calculates the minimum support of artists according to some proportion of users
         # ex: pass in 10, so min support is num users / 10, or 10% of users
         # for some reason we can't import this number as a parameter...?
-        min_sup = math.floor(num_users/10)
+        min_sup = math.floor(num_users/5)
 
         if min_sup == 0:
             min_sup = 1
 
         # this is for humongous clusters where a large minimum support ( > 300 ) doesn't really make sense
         # for the Last.fm data set
-        if num_users > 1000:
-            min_sup = 75
+        # if num_users > 1000:
+        #     min_sup = num_users/20
 
-        print("min sup: ", min_sup)
-        print("number of users: {}".format(num_users))
+        # print("min sup: ", min_sup)
+        # print("number of users: {}".format(num_users))
 
         # create a list of "transactions" for frequent mining from the top artists for the current user
         transactions = (list(user_data.top_artists))
@@ -58,7 +58,7 @@ def find_frequent_artists(sample_clusters):
 
         # sort the report object in reverse order so the highest played artists are first
         report = sorted(report, key=lambda tup: tup[1], reverse=True)
-        print(report)
+        # print(report)
 
         # store the report list for the cluster number in the frequent artist dictionary
         frequent_artist_dict[cluster] = report

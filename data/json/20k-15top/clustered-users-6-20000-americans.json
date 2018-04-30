@@ -1,0 +1,422 @@
+{
+    "name": "20k Last.fm Users",
+    "children": [
+        {
+            "name": "the beatles",
+            "children": [
+                {
+                    "name": "the beatles",
+                    "size": 2487
+                }
+            ]
+        },
+        {
+            "name": "",
+            "children": []
+        },
+        {
+            "name": "the beatles",
+            "children": [
+                {
+                    "name": "the beatles",
+                    "size": 449
+                },
+                {
+                    "name": "bob dylan",
+                    "size": 107
+                },
+                {
+                    "name": "radiohead",
+                    "size": 104
+                }
+            ]
+        },
+        {
+            "name": "brand new",
+            "children": [
+                {
+                    "name": "brand new",
+                    "size": 6
+                },
+                {
+                    "name": "bayside",
+                    "size": 5
+                },
+                {
+                    "name": "alkaline trio",
+                    "size": 4
+                },
+                {
+                    "name": "thrice",
+                    "size": 3
+                },
+                {
+                    "name": "saves the day",
+                    "size": 2
+                },
+                {
+                    "name": "kevin devine",
+                    "size": 2
+                },
+                {
+                    "name": "bright eyes",
+                    "size": 2
+                },
+                {
+                    "name": "senses fail",
+                    "size": 2
+                },
+                {
+                    "name": "tegan and sara",
+                    "size": 2
+                },
+                {
+                    "name": "a day to remember",
+                    "size": 2
+                },
+                {
+                    "name": "manchester orchestra",
+                    "size": 2
+                },
+                {
+                    "name": "say anything",
+                    "size": 2
+                },
+                {
+                    "name": "morrissey",
+                    "size": 1
+                },
+                {
+                    "name": "elliott smith",
+                    "size": 1
+                },
+                {
+                    "name": "blink-182",
+                    "size": 1
+                },
+                {
+                    "name": "thursday",
+                    "size": 1
+                },
+                {
+                    "name": "the good life",
+                    "size": 1
+                },
+                {
+                    "name": "greeley estates",
+                    "size": 1
+                },
+                {
+                    "name": "bad religion",
+                    "size": 1
+                },
+                {
+                    "name": "motion city soundtrack",
+                    "size": 1
+                },
+                {
+                    "name": "afi",
+                    "size": 1
+                },
+                {
+                    "name": "avenged sevenfold",
+                    "size": 1
+                },
+                {
+                    "name": "matt & kim",
+                    "size": 1
+                },
+                {
+                    "name": "taking back sunday",
+                    "size": 1
+                },
+                {
+                    "name": "the smiths",
+                    "size": 1
+                },
+                {
+                    "name": "glassjaw",
+                    "size": 1
+                },
+                {
+                    "name": "paramore",
+                    "size": 1
+                },
+                {
+                    "name": "plain white t's",
+                    "size": 1
+                },
+                {
+                    "name": "matt pryor",
+                    "size": 1
+                },
+                {
+                    "name": "dashboard confessional",
+                    "size": 1
+                },
+                {
+                    "name": "the ataris",
+                    "size": 1
+                },
+                {
+                    "name": "yeah yeah yeahs",
+                    "size": 1
+                },
+                {
+                    "name": "rise against",
+                    "size": 1
+                },
+                {
+                    "name": "all time low",
+                    "size": 1
+                },
+                {
+                    "name": "underoath",
+                    "size": 1
+                },
+                {
+                    "name": "mother mother",
+                    "size": 1
+                },
+                {
+                    "name": "jonas brothers",
+                    "size": 1
+                },
+                {
+                    "name": "weezer",
+                    "size": 1
+                },
+                {
+                    "name": "miike snow",
+                    "size": 1
+                },
+                {
+                    "name": "phantom planet",
+                    "size": 1
+                },
+                {
+                    "name": "1989",
+                    "size": 1
+                },
+                {
+                    "name": "jesse lacey",
+                    "size": 1
+                },
+                {
+                    "name": "the format",
+                    "size": 1
+                },
+                {
+                    "name": "attack attack!",
+                    "size": 1
+                },
+                {
+                    "name": "the early november",
+                    "size": 1
+                },
+                {
+                    "name": "nirvana",
+                    "size": 1
+                },
+                {
+                    "name": "desaparecidos",
+                    "size": 1
+                },
+                {
+                    "name": "something corporate",
+                    "size": 1
+                },
+                {
+                    "name": "this will destroy you",
+                    "size": 1
+                },
+                {
+                    "name": "the starting line",
+                    "size": 1
+                },
+                {
+                    "name": "discovery",
+                    "size": 1
+                },
+                {
+                    "name": "neutral milk hotel",
+                    "size": 1
+                },
+                {
+                    "name": "diplo",
+                    "size": 1
+                },
+                {
+                    "name": "armor for sleep",
+                    "size": 1
+                },
+                {
+                    "name": "radiohead",
+                    "size": 1
+                },
+                {
+                    "name": "modest mouse",
+                    "size": 1
+                },
+                {
+                    "name": "lil' wayne",
+                    "size": 1
+                },
+                {
+                    "name": "crystal castles",
+                    "size": 1
+                },
+                {
+                    "name": "bloodhound gang",
+                    "size": 1
+                },
+                {
+                    "name": "silversun pickups",
+                    "size": 1
+                },
+                {
+                    "name": "chiodos",
+                    "size": 1
+                },
+                {
+                    "name": "anti-flag",
+                    "size": 1
+                },
+                {
+                    "name": "architecture in helsinki",
+                    "size": 1
+                },
+                {
+                    "name": "escape the fate",
+                    "size": 1
+                },
+                {
+                    "name": "alexisonfire",
+                    "size": 1
+                },
+                {
+                    "name": "my chemical romance",
+                    "size": 1
+                },
+                {
+                    "name": "cursive",
+                    "size": 1
+                },
+                {
+                    "name": "anberlin",
+                    "size": 1
+                },
+                {
+                    "name": "aiden",
+                    "size": 1
+                },
+                {
+                    "name": "30 seconds to mars",
+                    "size": 1
+                },
+                {
+                    "name": "silverstein",
+                    "size": 1
+                },
+                {
+                    "name": "cold",
+                    "size": 1
+                },
+                {
+                    "name": "incubus",
+                    "size": 1
+                },
+                {
+                    "name": "feist",
+                    "size": 1
+                },
+                {
+                    "name": "gym class heroes",
+                    "size": 1
+                },
+                {
+                    "name": "the unseen",
+                    "size": 1
+                },
+                {
+                    "name": "oh, sleeper",
+                    "size": 1
+                },
+                {
+                    "name": "the kooks",
+                    "size": 1
+                },
+                {
+                    "name": "the new amsterdams",
+                    "size": 1
+                },
+                {
+                    "name": "the audition",
+                    "size": 1
+                },
+                {
+                    "name": "billy talent",
+                    "size": 1
+                },
+                {
+                    "name": "cobra starship",
+                    "size": 1
+                },
+                {
+                    "name": "straylight run",
+                    "size": 1
+                }
+            ]
+        },
+        {
+            "name": "kanye west",
+            "children": [
+                {
+                    "name": "kanye west",
+                    "size": 522
+                },
+                {
+                    "name": "lil' wayne",
+                    "size": 434
+                },
+                {
+                    "name": "jay-z",
+                    "size": 286
+                },
+                {
+                    "name": "nas",
+                    "size": 198
+                },
+                {
+                    "name": "lupe fiasco",
+                    "size": 197
+                },
+                {
+                    "name": "t.i.",
+                    "size": 195
+                }
+            ]
+        },
+        {
+            "name": "radiohead",
+            "children": [
+                {
+                    "name": "radiohead",
+                    "size": 1462
+                },
+                {
+                    "name": "the beatles",
+                    "size": 343
+                },
+                {
+                    "name": "modest mouse",
+                    "size": 300
+                },
+                {
+                    "name": "death cab for cutie",
+                    "size": 296
+                }
+            ]
+        }
+    ]
+}

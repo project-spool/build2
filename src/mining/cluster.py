@@ -4,34 +4,56 @@
 
 import pandas as pd
 from sklearn.cluster import MiniBatchKMeans, KMeans
-from sklearn import metrics
-from scipy.spatial.distance import cdist
-import numpy as np
+from sklearn.cluster import k_means_
+from sklearn.metrics.pairwise import cosine_distances
 import matplotlib.pyplot as plt
+import numpy as np
+
+
+def cosine(X, Y=None, Y_norm_squared=None, squared=False):
+    return cosine_distances(X,Y)
 
 
 def calc_sses(matrix, start, stop):
     """
      Calculates the SSEs for an input matrix between start and stop k values
     """
-
-    # for each key k:
-        # k: (silhouette score, labels)
     sse = {}
 
     for k in range(start, stop+1):
 
         print("\nRunning on k = {}".format(k))
+        # assign a cosine distance function
+        k_means_.euclidean_distances = cosine
 
+        # call the clustering
         km = MiniBatchKMeans(n_clusters=k)
         km = km.fit(matrix)
 
-        print("Labels: {}".format(km.labels_))
         print("Inertia: {}".format(km.inertia_))
 
         sse[k] = (km.inertia_, km.labels_.tolist())
 
     return sse
+
+
+def get_all_results(sse):
+
+    results = []
+    kv_pairs = zip(sse.keys(), sse.values())
+
+    for pair in kv_pairs:
+
+        result_dict = {
+        "k": pair[0],
+        "sse": pair[1][0],
+        "labels": pair[1][1]
+        }
+
+        results.append(result_dict)
+
+    return results
+
 
 
 def optimize(sse):
@@ -78,16 +100,16 @@ def create_cluster_groups(found_users, cluster_labels):
     user_cluster_df.columns = ['cluster', 'user_id', 'top_artists']
 
     print("cluster value counts: ")
-    print(user_cluster_df.cluster.value_counts())
+    # print(user_cluster_df.cluster.value_counts())
 
     # groups all users by cluster for easy analysis
     cluster_groups = user_cluster_df.groupby('cluster')
 
-    for name, group in cluster_groups:
-        print(group)
-        print(name)
-        print(group)
-        print('\n')
+    # for name, group in cluster_groups:
+    #     print(group)
+    #     print(name)
+    #     print(group)
+    #     print('\n')
 
     # pass the grouped clusters to the frequent itemset mining
     return cluster_groups

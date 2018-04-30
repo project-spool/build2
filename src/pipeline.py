@@ -3,13 +3,13 @@
 # hosts all processing and clustering processes
 
 from process import process
-from cluster import optimize, calc_sses, plot_sse, create_cluster_groups
+from cluster import optimize, calc_sses, plot_sse, create_cluster_groups, get_all_results
 from frequent_items import find_frequent_artists
 import pandas as pd
 import json
 
 
-def run_processing_pipliline(sample_size, top_artist_count):
+def run_processing_pipeline(sample_size, top_artist_count):
     """
      Runs the pre processing algorithms to produce the user artist matrix
     """
@@ -42,11 +42,11 @@ def run_frequent_items_pipeline(path):
 
 def data2json(frequent_artists):
     print("Converting data to JSON for visualization")
-
-    for k in frequent_artists:
-        print(k)
-        print(frequent_artists[k])
-        print('\n')
+    #
+    # for k in frequent_artists:
+    #     print(k)
+    #     print(frequent_artists[k])
+    #     print('\n')
 
     # Initial setup
     viz_dict = {}
@@ -68,8 +68,10 @@ def data2json(frequent_artists):
             children.append(artist_obj)
 
         # gets the name of the top artist
-        name = artists[0][0]
-        name = k
+        if(len(artists) == 0):
+            name = ""
+        else:
+            name = artists[0][0]
 
         current_cluster["name"] = name
         current_cluster["children"] = children
@@ -79,33 +81,48 @@ def data2json(frequent_artists):
     return viz_dict
 
 
-def export_json(dict):
-    with open('20k-data.json', 'w') as f:
+def export_json(dict, filename):
+    with open(filename, 'w') as f:
         json.dump(dict, f, ensure_ascii=False, indent=4, separators=(',', ': '))
         f.write('\n')
 
 if __name__ == '__main__':
 
     # Run the pipeline
+    SIZE = 20000
+
+    # FIXME: Export
+    # found_users, user_artist_mtx = run_processing_pipeline(SIZE, 15)
+    # pd.to_pickle(found_users, '../data/pickles/{}/found-users.pkl'.format(SIZE))
+    # pd.to_pickle(user_artist_mtx, '../data/pickles/{}/user-artist-mtx.pkl'.format(SIZE))
 
     # print("Reading user pickle")
-    # found_users = pd.read_pickle('../data/pickles/20k/found-users.pkl')
+    # found_users = pd.read_pickle('../data/pickles/{}/found-users.pkl'.format(SIZE))
     #
     # print("Reading user artist matrix pickle")
-    # user_artist_mtx = pd.read_pickle('../data/pickles/20k/user-artist-mtx.pkl')
-
-    # run_clustering_pipeline(found_users, user_artist_mtx)
-    # sse = calc_sses(user_artist_mtx, 5, 20)
-    # pd.to_pickle(sse, '../data/pickles/20k/sse-5-20-dict')
-
+    # user_artist_mtx = pd.read_pickle('../data/pickles/{}/user-artist-mtx.pkl'.format(SIZE))
+    #
+    # # run_clustering_pipeline(found_users, user_artist_mtx)
+    START = 5
+    STOP = 30
+    # sse = calc_sses(user_artist_mtx, START, STOP)
+    # pd.to_pickle(sse, '../data/pickles/{}/sse-{}-{}-dict.pkl'.format(SIZE, START, STOP))
+    #
     # print("Reading sse pickle")
-    # sse = pd.read_pickle('../data/pickles/20k/sse-5-20-dict')
+
+    sse = pd.read_pickle('../data/pickles/{}/sse-{}-{}-dict.pkl'.format(SIZE, START, STOP))
+
+    print(sse)
+
 
     # plot_sse(sse)
     # optimal_cluster = optimize(sse)
     # clusters = create_cluster_groups(found_users, optimal_cluster['labels'])
-    # pd.to_pickle(clusters, '../data/pickles/clustered-users-20000-americans.pkl')
 
-    frequent_artists = run_frequent_items_pipeline(path='../data/pickles/clustered-users-20000-americans.pkl')
-    viz = data2json(frequent_artists)
-    export_json(viz)
+    results = get_all_results(sse)
+
+    for result in results:
+
+        frequent_artists = run_frequent_items_pipeline(path='../data/pickles/{}/clustered-users-{}-americans.pkl'.format(SIZE, result['k']))
+        viz = data2json(frequent_artists)
+        export_json(viz, 'clustered-users-{}-{}-americans.json'.format(result['k'], SIZE))

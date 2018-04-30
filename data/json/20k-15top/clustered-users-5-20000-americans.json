@@ -1,0 +1,93 @@
+{
+    "name": "20k Last.fm Users",
+    "children": [
+        {
+            "name": "lil' wayne",
+            "children": [
+                {
+                    "name": "lil' wayne",
+                    "size": 324
+                },
+                {
+                    "name": "kanye west",
+                    "size": 178
+                },
+                {
+                    "name": "t.i.",
+                    "size": 119
+                },
+                {
+                    "name": "jay-z",
+                    "size": 101
+                }
+            ]
+        },
+        {
+            "name": "the beatles",
+            "children": [
+                {
+                    "name": "the beatles",
+                    "size": 1986
+                },
+                {
+                    "name": "bob dylan",
+                    "size": 448
+                }
+            ]
+        },
+        {
+            "name": "pink floyd",
+            "children": [
+                {
+                    "name": "pink floyd",
+                    "size": 487
+                },
+                {
+                    "name": "nine inch nails",
+                    "size": 446
+                },
+                {
+                    "name": "radiohead",
+                    "size": 195
+                },
+                {
+                    "name": "the beatles",
+                    "size": 194
+                }
+            ]
+        },
+        {
+            "name": "radiohead",
+            "children": [
+                {
+                    "name": "radiohead",
+                    "size": 1875
+                },
+                {
+                    "name": "sufjan stevens",
+                    "size": 724
+                },
+                {
+                    "name": "the beatles",
+                    "size": 594
+                },
+                {
+                    "name": "death cab for cutie",
+                    "size": 583
+                },
+                {
+                    "name": "elliott smith",
+                    "size": 528
+                },
+                {
+                    "name": "modest mouse",
+                    "size": 524
+                }
+            ]
+        },
+        {
+            "name": "",
+            "children": []
+        }
+    ]
+}

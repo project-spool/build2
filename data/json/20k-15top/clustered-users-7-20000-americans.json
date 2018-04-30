@@ -1,0 +1,171 @@
+{
+    "name": "20k Last.fm Users",
+    "children": [
+        {
+            "name": "the beatles",
+            "children": [
+                {
+                    "name": "the beatles",
+                    "size": 2000
+                },
+                {
+                    "name": "bob dylan",
+                    "size": 454
+                },
+                {
+                    "name": "radiohead",
+                    "size": 454
+                }
+            ]
+        },
+        {
+            "name": "elliott smith",
+            "children": [
+                {
+                    "name": "elliott smith",
+                    "size": 488
+                },
+                {
+                    "name": "the mountain goats",
+                    "size": 267
+                },
+                {
+                    "name": "sufjan stevens",
+                    "size": 196
+                },
+                {
+                    "name": "the beatles",
+                    "size": 154
+                },
+                {
+                    "name": "belle and sebastian",
+                    "size": 153
+                },
+                {
+                    "name": "bright eyes",
+                    "size": 141
+                },
+                {
+                    "name": "radiohead",
+                    "size": 141
+                }
+            ]
+        },
+        {
+            "name": "",
+            "children": []
+        },
+        {
+            "name": "brand new",
+            "children": [
+                {
+                    "name": "brand new",
+                    "size": 468
+                },
+                {
+                    "name": "fall out boy",
+                    "size": 454
+                },
+                {
+                    "name": "blink-182",
+                    "size": 428
+                },
+                {
+                    "name": "death cab for cutie",
+                    "size": 231
+                }
+            ]
+        },
+        {
+            "name": "radiohead",
+            "children": [
+                {
+                    "name": "radiohead",
+                    "size": 1635
+                },
+                {
+                    "name": "death cab for cutie",
+                    "size": 891
+                },
+                {
+                    "name": "modest mouse",
+                    "size": 617
+                },
+                {
+                    "name": "the beatles",
+                    "size": 483
+                },
+                {
+                    "name": "coldplay",
+                    "size": 464
+                }
+            ]
+        },
+        {
+            "name": "nine inch nails",
+            "children": [
+                {
+                    "name": "nine inch nails",
+                    "size": 440
+                },
+                {
+                    "name": "radiohead",
+                    "size": 127
+                },
+                {
+                    "name": "tool",
+                    "size": 99
+                }
+            ]
+        },
+        {
+            "name": "say anything",
+            "children": [
+                {
+                    "name": "say anything",
+                    "size": 9
+                },
+                {
+                    "name": "bright eyes",
+                    "size": 8
+                },
+                {
+                    "name": "death cab for cutie",
+                    "size": 5
+                },
+                {
+                    "name": "the white stripes",
+                    "size": 5
+                },
+                {
+                    "name": "conor oberst",
+                    "size": 3
+                },
+                {
+                    "name": "john mayer",
+                    "size": 3
+                },
+                {
+                    "name": "new found glory",
+                    "size": 3
+                },
+                {
+                    "name": "the shins",
+                    "size": 3
+                },
+                {
+                    "name": "the spill canvas",
+                    "size": 3
+                },
+                {
+                    "name": "modest mouse",
+                    "size": 3
+                },
+                {
+                    "name": "the beatles",
+                    "size": 3
+                }
+            ]
+        }
+    ]
+}
