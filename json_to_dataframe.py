@@ -1,23 +1,50 @@
 import pandas as pd
+import time
 import numpy as np
 
-#load data into CSV, then use Pandas to read them
 
-rawData = pd.read_csv('/Users/rahulnair/Desktop/lastfm-dataset-360K/usersha1-artmbid-artname-plays.tsv', delimiter='\t', encoding='utf-8')
+##########################
+# basic data importation
+##########################
 
-allUsers = list()
-playCounts = list()
+rawData = pd.read_csv("~/Desktop/lastfm-dataset-360K/usersha1-artmbid-artname-plays.tsv", sep='\t')
 
-for id in rawData['userID']:
-    if id not in allUsers:
-        allUsers.append(id)
+##########################
+# data cleaning
+##########################
 
-rawData = rawData.drop_duplicates(subset='userID')
-rawData['artistPlayCount'] = list(zip(rawData['artistName'], rawData['artistPlays']))
+cleaned = rawData.dropna()
 
-finalData = list(zip(rawData['userID'], rawData['artistPlayCount']))
+#########################
+# grouping by the user
+# APPROACH 1: classical method
+#########################
 
-outfile = open("topArtists.txt","w+")
+users = []
 
-for i in range(len(finalData)):
-    outfile.write('\n'.join('{} {}'.format(x[0], x[1]) for x in finalData))
+startTime = time.time()
+for id in cleaned['userID']:
+    if users.count(id) < 5:
+        users.append(id)
+    else:
+        pass
+endTime = time.time()
+print("Total time with classical method:", (endTime-startTime))
+# all unique users found
+
+#########################
+# grouping by the user
+# APPROACH 2: using pandas
+#########################
+dfN = cleaned.groupby('userID').apply(lambda x:x['artistPlays'].reset_index()).reset_index()
+#print(dfN[dfN['level_1'] <= 4][['userID', 'artistPlays']])
+
+#########################
+# grouping by the user
+# APPROACH 3: using pandas with an even simpler twise
+#########################
+
+time1 = time.time()
+print(cleaned.groupby('userID').head(5))
+time2 = time.time()
+print("Total time with Lambda:",time2 - time1)
